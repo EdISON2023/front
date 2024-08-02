@@ -8,8 +8,8 @@
           <img :src="userImage" alt="User Image" class="user-image">
         </div>
         <div v-if="isOpen" class="dropdown-content">
-          <router-link to="/create/User">Usuario</router-link>
-          <router-link to="/">Logout</router-link>
+          <router-link to="/create/User">Perfil</router-link>
+          <router-link to="/">Cerrar Sesion</router-link>
         </div>
       </div>
     </div>
@@ -48,13 +48,13 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #04171d;
+  background-color: #1f2937;
   color: #fff;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 77vw; 
+  width: 70vw; 
   right: 10px;
 }
 
@@ -83,7 +83,7 @@ export default {
   display: none;
   position: absolute;
   right: 10px;
-  background-color: #f1f1f1;
+  background-color: #1f2937;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -91,14 +91,14 @@ export default {
 }
 
 .dropdown-content a {
-  color: rgb(9, 41, 54);
+  color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #14532d;
 }
 
 .dropdown:hover .dropdown-content {

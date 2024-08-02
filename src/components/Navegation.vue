@@ -6,8 +6,8 @@
           <span class="mikro" v-if="!isCollapsed">Mikro</span>
           <span class="lab" v-if="!isCollapsed">Movilab</span>
           <span v-if="isCollapsed" class="logo-collapsed">
-            <span class="mikro-collapsed">O</span>
-            <span class="lab-collapsed">B</span>
+            <span class="mikro-collapsed">M</span>
+            <span class="lab-collapsed">M</span>
           </span>
         </h1>
       </div>
@@ -18,49 +18,50 @@
         <ul>
           <li>
             <router-link to="/dashboard" class="active">
-              <i class="fas fa-tachometer-alt"></i>
-              <span v-if="!isCollapsed">Dashboard</span>
+              <i class="fa fa-home" aria-hidden="true"></i>
+              <span v-if="!isCollapsed">HOME</span>
             </router-link>
           </li>
           <li>
             <router-link to="/create/User" class="active">
               <i class="fas fa-user"></i>
-              <span v-if="!isCollapsed">Usuario</span>
+              <span v-if="!isCollapsed">USUARIO</span>
             </router-link>
           </li>
           <li>
             <router-link to="/create/EstacionMetro">
-              <i class="fas fa-map-marker-alt"></i>
-              <span v-if="!isCollapsed">Estaciones</span>
+              <i class="fa fa-university" aria-hidden="true"></i>
+              <span v-if="!isCollapsed">ESTACIONES</span>
             </router-link>
           </li>
           <li>
             <router-link to="/create/PuntoInteres">
-              <i class="fas fa-map-signs"></i>
-              <span v-if="!isCollapsed">Bicicletas</span>
+              <i class="fa fa-bicycle" aria-hidden="true"></i>
+              <span v-if="!isCollapsed">BICICLETAS</span>
             </router-link>
           </li>
           <li>
             <router-link to="/create/Ruta">
-              <i class="fas fa-route"></i>
-              <span v-if="!isCollapsed">Alquileres</span>
+              <i class="fa fa-list-alt" aria-hidden="true"></i>
+              <span v-if="!isCollapsed">ALQUILERES</span>
             </router-link>
           </li>
           <li>
             <router-link to="/create/MensajePersonalizado">
-              <i class="fas fa-envelope"></i>
-              <span v-if="!isCollapsed">Mantenimientos</span>
+              <i class="fa fa-cogs" aria-hidden="true"></i>
+              <span v-if="!isCollapsed">MANTENIMIENTO</span>
             </router-link>
           </li>
           <li>
             <router-link to="/create/GuiaVoz">
-              <i class="fas fa-headset"></i>
-              <span v-if="!isCollapsed">Viajes</span>
+              <i class="fa fa-line-chart" aria-hidden="true"></i>
+              <span v-if="!isCollapsed">VIAJES</span>
             </router-link>
+            
           </li>
-       <li class="submenu">
+         <li class="submenu">
             <router-link to="/dashboard">
-              <i class="fas fa-history"></i>
+              <i class="fa fa-window-restore" aria-hidden="true"></i>
               <span v-if="!isCollapsed">Gestores</span>
             </router-link>
             <ul v-if="!isCollapsed">
@@ -114,7 +115,7 @@ body {
 
 .sidebar {
   flex: 0 0 215px;
-  background-color: #0e2c45;
+  background-color: #1f2937;
   padding-top: 25px;
   transition: width 0.3s ease, left 0.3s ease;
   overflow: hidden;
@@ -145,24 +146,23 @@ body {
 }
 
 .logo .lab {
-  color: gray; 
+  color: white; 
   font-size: 1em;
   display: block;
-  margin-left:60px; 
+  margin:60px; 
   margin-top: 5px; 
 }
 
 .logo .mikro-collapsed {
   font-weight: bold;
-  color: black; 
+  color: rgb(132, 219, 89); 
   font-size: 1.2em;
   display: block;
   line-height: 0.8em;
 }
 
 .logo .lab-collapsed {
-  color: gray; /* Gris */
-  font-size: 1.2em;
+  color: white; /* Gris */
   display: block;
 }
 
@@ -203,7 +203,7 @@ nav ul li:hover {
 }
 
 nav ul li a:hover {
-  background-color: #656565;
+  background-color: #14532d;
   border-radius: 4px;
 }
 
