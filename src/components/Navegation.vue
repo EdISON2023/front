@@ -19,13 +19,19 @@
           <li>
             <router-link to="/dashboard" class="active">
               <i class="fa fa-home" aria-hidden="true"></i>
-              <span v-if="!isCollapsed">HOME</span>
+              <span v-if="!isCollapsed">DASHBOARD</span>
             </router-link>
           </li>
           <li>
             <router-link to="/create/User" class="active">
               <i class="fas fa-user"></i>
               <span v-if="!isCollapsed">USUARIO</span>
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/create/Beacon">
+              <i class="fa fa-tags" aria-hidden="true"></i>
+              <span v-if="!isCollapsed">BEACON</span>
             </router-link>
           </li>
           <li>
@@ -70,7 +76,7 @@
               <li><router-link to="/view/PuntoInteres">Bicicletas</router-link></li>
               <li><router-link to="/viewMensaje/Personalizado">Mantenimiento</router-link></li>
               <li><router-link to="/view/Ruta">Alquileres</router-link></li>
-              <li><router-link to="/view/GuiaVoz">Viajes</router-link></li>
+              <li><router-link to="/view/Beacon">BEACON</router-link></li>
             </ul>
           </li> 
         </ul>

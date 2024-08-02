@@ -3,7 +3,7 @@
   <Navegation />
 <div>
   <Nav />
-  <h1>Estación - Edit</h1>
+  <h1>Estación - Editar</h1>
   <!-- Aquí puedes agregar el resto del contenido de tu vista -->
 </div>
 

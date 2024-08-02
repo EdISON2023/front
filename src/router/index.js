@@ -5,6 +5,10 @@ import RutaNew from "../views/ruta/RutaNew.vue";
 import RutaEdit from "@/views/ruta/RutaEdit.vue";
 import RutaView from "@/views/ruta/RutaView.vue";
 
+//Import Beacon
+import BeaconNew from "@/views/beacon/BeaconNew.vue";
+import BeaconView from "@/views/beacon/BeaconView.vue";
+
 //Import MENSAJE PERSONALIZADO
 import MensajePersonalizadoEdit from "@/views/mensajePersonalizado/MensajePersonalizadoEdit.vue";
 import MensajePersonalizadoView from "@/views/mensajePersonalizado/MensajePersonalizadoView.vue";
@@ -127,6 +131,20 @@ const routes = [
     name: "viewEstacionMetro",
     component: EstacionMetroView,
   },
+
+  //Route Beacon
+  {
+    path:"/view/Beacon",
+    name:"viewBeacon",
+    component:BeaconView,
+  },
+  {
+    path:"/create/Beacon",
+    name:"createBeacon",
+    component:BeaconNew,
+  },
+
+
   //Route USER
   {
     path: "/create/User",
