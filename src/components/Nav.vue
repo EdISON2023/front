@@ -98,7 +98,7 @@ export default {
 }
 
 .dropdown-content a:hover {
-  background-color: #14532d;
+  background-color: #047857;
 }
 
 .dropdown:hover .dropdown-content {

@@ -5,7 +5,7 @@
         </div>
         <div class="login-section">
           <div class="logo">
-              <h1>Mikro<span class="text">moviLAB</span></h1>
+              <h1>MiIKRO<span class="texto">MOVILAB</span></h1>
               <p>Movilidad sustentable para Quito</p>
             </div>
             <form @submit.prevent="login">
@@ -30,8 +30,8 @@
   export default {
     data() {
         return {
-            email: 'todoCode@gmail.com',
-            password: '1'
+            email: '',
+            password: ''
         };
     },
     methods: {
@@ -47,16 +47,7 @@
   
   <style scoped>
   
-  /* Estilos CSS del boton */
-  button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+
   
   
   
@@ -67,7 +58,6 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f7f7f7;
   }
   
   .container {
@@ -77,7 +67,7 @@
   }
   
   .image-section {
-      flex: 1;
+      flex: 2;
       display: flex;
       justify-content: center;
   }
@@ -89,27 +79,30 @@
   
   .login-section {
       flex: 1;
-      padding: 40px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin-right: -20%;
+      padding: 40px;
+
   }
   
   .logo {
       text-align: center;
-      margin-right: -20%;
   }
   
   .logo h1 {
-      font-size: 4em;
+    display: inline;
+    font-size: 2.5em;
+    color: #10b981;
   
   }
   
   .logo .text{
-      color: #d6d6d6;
-      font-size: 0.75em
+    display: inline;
+    font-size: 2.5em;
+    color: gray;
   }
   
   form {
@@ -142,6 +135,15 @@
   .register-link a:hover {
       text-decoration: underline;
   }
+    /* Estilos CSS del boton */
+    button {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #10b981;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
   
   </style>
-  

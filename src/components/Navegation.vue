@@ -3,8 +3,8 @@
     <aside :class="['sidebar', { 'sidebar-collapsed': isCollapsed }]">
       <div class="logo">
         <h1>
-          <span class="mikro" v-if="!isCollapsed">Mikro</span>
-          <span class="lab" v-if="!isCollapsed">Movilab</span>
+          <span class="mikro" v-if="!isCollapsed">MIKRO</span>
+          <span class="lab" v-if="!isCollapsed">MOVILAB</span>
           <span v-if="isCollapsed" class="logo-collapsed">
             <span class="mikro-collapsed">M</span>
             <span class="lab-collapsed">M</span>
@@ -63,7 +63,7 @@
            
             
           </li>
-        <li class="submenu">
+        <!-- <li class="submenu">
             <router-link to="/dashboard">
               <i class="fa fa-window-restore" aria-hidden="true"></i>
               <span v-if="!isCollapsed">Gestores</span>
@@ -76,7 +76,7 @@
               <li><router-link to="/view/Alquiler">Alquiler</router-link></li>
               <li><router-link to="/view/Beacon">BEACON</router-link></li>
             </ul>
-          </li>  
+          </li>   -->
         </ul>
       </nav>
     </aside>
@@ -131,7 +131,6 @@ body {
 
 .logo {
   text-align: center;
-  padding-bottom: 20px;
 }
 
 .logo h1 {
@@ -143,7 +142,7 @@ body {
 
 .logo .mikro {
   font-weight: bold;
-  color: rgb(132, 219, 89); 
+  color: #10b981; 
   font-size: 1em;
   display: block;
   line-height: 0.8em;
@@ -159,7 +158,7 @@ body {
 
 .logo .mikro-collapsed {
   font-weight: bold;
-  color: rgb(132, 219, 89); 
+  color: #10b981; 
   font-size: 1.2em;
   display: block;
   line-height: 0.8em;
@@ -207,7 +206,7 @@ nav ul li:hover {
 }
 
 nav ul li a:hover {
-  background-color: #14532d;
+  background-color: #047857;
   border-radius: 4px;
 }
 

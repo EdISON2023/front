@@ -5,7 +5,7 @@
     </div>
     <div class="login-section">
       <div class="logo">
-        <h1>Mikro<span class="text">moviLAB</span></h1>
+        <h1>MIKRO<span class="texto">MOVILAB</span></h1>
         <p>Movilidad sustentable para Quito</p>
       </div>
       <form @submit.prevent="register">
@@ -71,40 +71,28 @@ export default {
 <style scoped>
 
 
-/* Estilos CSS del boton */
-.custom-btn {
-display: inline-block;
-padding: 10px 20px;
-font-size: 16px;
-font-weight: bold;
-color: #fff;
-background-color: #034494;
-border: none;
-border-radius: 5px;
-text-align: center;
-text-decoration: none;
-transition: background-color 0.3s ease;
-}
-body {
+
+ body {
   margin: 0;
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f7f7f7;
 }
 
 .container {
   display: flex;
   width: 100%;
   height: 100vh;
+
 }
 
 .image-section {
-  flex: 1;
+  flex: 2;
   display: flex;
   justify-content: center;
+
 }
 
 .image-section img {
@@ -114,26 +102,30 @@ body {
 
 .login-section {
   flex: 1;
-  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-right: -20%;
+  padding: 40px;
+
 }
 
 .logo {
   text-align: center;
-  margin-left: 85px;
 }
 
 .logo h1 {
+  display: inline;
   font-size: 2.5em;
-  margin-right: 40px;
+  color: #10b981;
+
 }
 
 .logo .text {
-  color: #423939a8;
+  display: inline;
+  font-size: 2.5em;
+  color: gray;
 }
 
 form {
@@ -141,7 +133,6 @@ form {
   flex-direction: column;
   width: 100%;
   max-width: 330px;
-  margin-right: -15%;
 }
 
 .name-group {
@@ -167,5 +158,18 @@ color: red;
 text-align: center; 
 margin-top: 10px; 
 }
-
+/* Estilos CSS del boton */
+.custom-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #10b981;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  }
 </style>
