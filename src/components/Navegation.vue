@@ -23,49 +23,47 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/create/User" class="active">
+            <router-link to="/view/User" class="active">
               <i class="fas fa-user"></i>
               <span v-if="!isCollapsed">USUARIO</span>
             </router-link>
           </li>
           <li>
-            <router-link to="/create/Beacon">
+
+            <router-link to="/view/Beacon">
               <i class="fa fa-tags" aria-hidden="true"></i>
               <span v-if="!isCollapsed">BEACON</span>
             </router-link>
           </li>
           <li>
-            <router-link to="/create/EstacionMetro">
+            <router-link to="/view/Estacion">
               <i class="fa fa-university" aria-hidden="true"></i>
               <span v-if="!isCollapsed">ESTACIONES</span>
             </router-link>
           </li>
           <li>
-            <router-link to="/create/PuntoInteres">
+            <router-link to="/view/Bicicleta">
               <i class="fa fa-bicycle" aria-hidden="true"></i>
               <span v-if="!isCollapsed">BICICLETAS</span>
             </router-link>
           </li>
           <li>
-            <router-link to="/create/Ruta">
+            <router-link to="/view/Alquiler">
               <i class="fa fa-list-alt" aria-hidden="true"></i>
-              <span v-if="!isCollapsed">ALQUILERES</span>
+              <span v-if="!isCollapsed">ALQUILER</span>
             </router-link>
           </li>
           <li>
-            <router-link to="/create/MensajePersonalizado">
+            <router-link to="/view/Mantenimiento">
               <i class="fa fa-cogs" aria-hidden="true"></i>
               <span v-if="!isCollapsed">MANTENIMIENTO</span>
             </router-link>
           </li>
           <li>
-            <router-link to="/create/GuiaVoz">
-              <i class="fa fa-line-chart" aria-hidden="true"></i>
-              <span v-if="!isCollapsed">VIAJES</span>
-            </router-link>
+           
             
           </li>
-         <li class="submenu">
+         <!-- <li class="submenu">
             <router-link to="/dashboard">
               <i class="fa fa-window-restore" aria-hidden="true"></i>
               <span v-if="!isCollapsed">Gestores</span>
@@ -73,12 +71,12 @@
             <ul v-if="!isCollapsed">
               <li><router-link to="/view/user">Usuarios</router-link></li>
               <li><router-link to="/view/EstacionMetro">Estaciones</router-link></li>
-              <li><router-link to="/view/PuntoInteres">Bicicletas</router-link></li>
+              <li><router-link to="/create/Bicicleta">Bicicletas</router-link></li>
               <li><router-link to="/viewMensaje/Personalizado">Mantenimiento</router-link></li>
               <li><router-link to="/view/Ruta">Alquileres</router-link></li>
               <li><router-link to="/view/Beacon">BEACON</router-link></li>
             </ul>
-          </li> 
+          </li>  -->
         </ul>
       </nav>
     </aside>

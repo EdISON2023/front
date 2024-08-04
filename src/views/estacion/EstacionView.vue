@@ -3,7 +3,7 @@
   <div class="container">
     <Nav />
     <div class="header">
-      <h2> Gestor Estación </h2>
+      <h2>Gestor Estación</h2>
       <div class="search-box">
         <i class="fas fa-search"></i>
         <input type="text" v-model="searchQuery" placeholder="Buscar..." />
@@ -14,32 +14,30 @@
         <thead>
           <tr>
             <th><i class="fas fa-calendar-alt"></i> Date</th>
-            <th><i class="fas fa-subway"></i> Nombre de la estación</th>
-            <th><i class="fas fa-align-left"></i> Capacidad</th>
+            <th><i class="fas fa-subway"></i> Nombre</th>
             <th><i class="fas fa-map-marker-alt"></i> Ubicación</th>
+            <th><i class="fas fa-align-left"></i> Capacidad</th>
+            <th><i class="fas fa-cube"></i> Cantidad Actual</th>
             <th><i class="fas fa-circle text-danger"></i> Estado</th>
             <th><i class="fas fa-cogs"></i> Acciones</th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="filteredEstaciones.length === 0">
-            <td colspan="6" class="text-center">
-              Sin registros de Estación 
+            <td colspan="7" class="text-center">
+              Sin registros de Estación
             </td>
           </tr>
-          <tr v-for="estacion in filteredEstaciones" :key="estacion.estacionId">
-            <td>{{ estacion.createEstacion }}</td>
-            <td>{{ estacion.nombreEstacion }}</td>
-            <td>{{ estacion.descripcionEstacion }}</td>
-            <td>{{ estacion.ubicacionEstacion }}</td>
-            <td>{{ estacion.estadoEstacion }}</td>
-
+          <tr v-for="estacion in filteredEstaciones" :key="estacion.id_estacion">
+            <td>{{ estacion.createDate }}</td>
+            <td>{{ estacion.nombre }}</td>
+            <td>{{ estacion.ubicacion }}</td>
+            <td>{{ estacion.capacidad }}</td>
+            <td>{{ estacion.cantidad_actual }}</td>
+            <td>{{ estacion.estado }}</td>
             <td class="actions">
-              <i
-                class="fas fa-edit"
-                @click="openOffCanvas('edit', estacion)"
-              ></i>
-              <!-- <i class="fas fa-trash-alt" @click="handleDeleteClick(estacion.estacionId)"></i> -->
+              <i class="fas fa-edit" @click="openOffCanvas('edit', estacion)"></i>
+              <!-- <i class="fas fa-trash-alt" @click="handleDeleteClick(estacion.id_estacion)"></i> -->
             </td>
           </tr>
         </tbody>
@@ -63,54 +61,25 @@
       <div class="off-canvas-body">
         <form @submit.prevent="submitForm" class="form">
           <div class="form-group">
-            <label for="nombre_estacion" class="form-label"
-              >Nombre de la estación <span class="required">*</span>:</label
-            >
-            <input
-              type="text"
-              id="nombre_estacion"
-              v-model="form.nombreEstacion"
-              class="form-control"
-              required
-            />
+            <label for="nombre" class="form-label">Nombre <span class="required">*</span>:</label>
+            <input type="text" id="nombre" v-model="form.nombre" class="form-control" required />
           </div>
           <div class="form-group">
-            <label for="descripcion_estacion" class="form-label"
-              >Capacidad <span class="required">*</span>:</label
-            >
-            <input
-              type="text"
-              id="descripcion_estacion"
-              v-model="form.descripcionEstacion"
-              class="form-control"
-              required
-            />
+            <label for="ubicacion" class="form-label">Ubicación <span class="required">*</span>:</label>
+            <input type="text" id="ubicacion" v-model="form.ubicacion" class="form-control" required />
           </div>
           <div class="form-group">
-            <label for="ubicacion_estacion" class="form-label"
-              >Ubicación <span class="required">*</span>:</label
-            >
-            <input
-              type="text"
-              id="ubicacion_estacion"
-              v-model="form.ubicacionEstacion"
-              class="form-control"
-              required
-            />
+            <label for="capacidad" class="form-label">Capacidad <span class="required">*</span>:</label>
+            <input type="number" id="capacidad" v-model="form.capacidad" class="form-control" required />
           </div>
           <div class="form-group">
-            <label for="ubicacion_estacion" class="form-label"
-              >Estado <span class="required">*</span>:</label
-            >
-            <input
-              type="text"
-              id="estadoEstacion"
-              v-model="form.estadoEstacion"
-              class="form-control"
-              required
-            />
+            <label for="cantidad_actual" class="form-label">Cantidad Actual <span class="required">*</span>:</label>
+            <input type="number" id="cantidad_actual" v-model="form.cantidad_actual" class="form-control" required />
           </div>
-
+          <div class="form-group">
+            <label for="estado" class="form-label">Estado <span class="required">*</span>:</label>
+            <input type="text" id="estado" v-model="form.estado" class="form-control" required />
+          </div>
           <div class="form-group-button">
             <button type="submit" class="btn">Guardar</button>
           </div>
@@ -127,7 +96,7 @@ import Swal from "sweetalert2";
 import axios from "axios"; // Aquí está el import correcto
 
 export default {
-  name: "EstacionMetroView",
+  name: "EstacionView",
   components: {
     Navegation,
     Nav,
@@ -139,11 +108,12 @@ export default {
       isOffCanvasOpen: false,
       offCanvasTitle: "",
       form: {
-        estacionId: null,
-        nombreEstacion: "",
-        descripcionEstacion: "",
-        ubicacionEstacion: "",
-        estadoEstacion: "",
+        id_estacion: null,
+        nombre: "",
+        ubicacion: "",
+        capacidad: 0,
+        cantidad_actual: 0,
+        estado: "",
       },
     };
   },
@@ -154,7 +124,7 @@ export default {
       }
       const query = this.searchQuery.trim().toLowerCase();
       return this.estaciones.filter((estacion) =>
-        estacion.nombreEstacion.toLowerCase().includes(query)
+        estacion.nombre.toLowerCase().includes(query)
       );
     },
   },
@@ -192,7 +162,7 @@ export default {
     //if (result.isConfirmed) {
     //try {
     //await axios.delete(`http://localhost:4200/estacion/${estacionId}`);
-    //this.estaciones = this.estaciones.filter(estacion => estacion.estacionId !== estacionId);
+    //this.estaciones = this.estaciones.filter(estacion => estacion.id_estacion !== estacionId);
     //Swal.fire('¡Borrado!', 'La estación ha sido borrada.', 'success');
     //} catch (error) {
     //Swal.fire('Error', 'Hubo un error al borrar la estación.', 'error');
@@ -205,11 +175,11 @@ export default {
     async submitForm() {
       try {
         await axios.put(
-          `http://localhost:4200/estacion/${this.form.estacionId}`,
+          `http://localhost:4200/estacion/${this.form.id_estacion}`,
           this.form
         );
         const index = this.estaciones.findIndex(
-          (e) => e.estacionId === this.form.estacionId
+          (e) => e.id_estacion === this.form.id_estacion
         );
         if (index !== -1) {
           this.estaciones[index] = { ...this.form };
@@ -226,7 +196,7 @@ export default {
       }
     },
     redirectToCreateEstacion() {
-      this.$router.push("/create/EstacionMetro");
+      this.$router.push("/create/Estacion");
     },
   },
   mounted() {
@@ -234,5 +204,4 @@ export default {
   },
 };
 </script>
-
-<style scoped src="@/assets/styles/estacionMetro/estacionMetro.css"></style>
+<style scoped src="@/assets/styles/estacion/estacionView.css"></style>

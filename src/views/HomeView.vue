@@ -46,11 +46,6 @@
   </script>
   
   <style scoped>
-  /* Estilos CSS específicos para este componente */
-  </style>
-  
-  
-  <style scoped>
   
   /* Estilos CSS del boton */
   button {

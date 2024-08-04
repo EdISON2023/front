@@ -1,33 +1,23 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-//Import RUTA
-import RutaNew from "../views/ruta/RutaNew.vue";
-import RutaEdit from "@/views/ruta/RutaEdit.vue";
-import RutaView from "@/views/ruta/RutaView.vue";
+//Import Alquiler
+import AlquilerNew from "../views/alquiler/AlquilerNew.vue";
+import AlquilerView from "@/views/alquiler/AlquilerView.vue";
 
 //Import Beacon
 import BeaconNew from "@/views/beacon/BeaconNew.vue";
 import BeaconView from "@/views/beacon/BeaconView.vue";
 
-//Import MENSAJE PERSONALIZADO
-import MensajePersonalizadoEdit from "@/views/mensajePersonalizado/MensajePersonalizadoEdit.vue";
-import MensajePersonalizadoView from "@/views/mensajePersonalizado/MensajePersonalizadoView.vue";
-import MensajePersonalizadoNew from "@/views/mensajePersonalizado/MensajePersonalizadoNew.vue";
-
-//Import MENSAJE PERSONALIZADO
-import GuiaVozEdit from "@/views/guiaVoz/guiaVozEdit.vue";
-import GuiaVozNew from "@/views/guiaVoz/guiaVozNew.vue";
-import GuiaVozView from "@/views/guiaVoz/guiaVozView.vue";
+//Import Mantenimiento
+import MantenimientoView from "@/views/mantenimiento/MantenimientoView.vue";
+import MantenimientoNew from "@/views/mantenimiento/MantenimientoNew.vue";
 
 //Import PUNTO DE INTERES
-import PuntoInteresNew from "@/views/puntoInteres/PuntoInteresNew.vue";
-import PuntoInteresEdit from "@/views/puntoInteres/PuntoInteresEdit.vue";
-import PuntoInteresView from "@/views/puntoInteres/PuntoInteresView.vue";
-
+import BicicletaNew from "@/views/bicicleta/BicicletaNew.vue";
+import BicicletaView from "@/views/bicicleta/BicicletaView.vue";
 //Import ESTACION DE METRO
-import EstacionMetroNew from "@/views/estacionMetro/EstacionMetroNew.vue";
-import EstacionMetroEdit from "@/views/estacionMetro/EstacionMetroEdit.vue";
-import EstacionMetroView from "@/views/estacionMetro/EstacionMetroView.vue";
+import EstacionNew from "@/views/estacion/EstacionNew.vue";
+import EstacionView from "@/views/estacion/EstacionView.vue";
 
 //Import USER
 import UserNew from "@/views/user/UserNew";
@@ -47,89 +37,53 @@ const routes = [
     component: HomeView,
   },
 
-  //Route RUTA
+  //Route Alquiler
   {
-    path: "/create/Ruta",
-    name: "createRuta",
-    component: RutaNew,
+    path: "/create/Alquiler",
+    name: "createAlquiler",
+    component: AlquilerNew,
   },
   {
-    path: "/edit/Ruta/:id",
-    name: "editRuta",
-    component: RutaEdit,
-  },
-  {
-    path: "/view/Ruta",
-    name: "viewRuta",
-    component: RutaView,
+    path: "/view/Alquiler",
+    name: "viewAlquiler",
+    component: AlquilerView
   },
 
-  //Route MENSAJE PERSONALIZADO
+  //Route Mantenimiento
   {
-    path: "/create/MensajePersonalizado",
-    name: "createMensajePersonalizado",
-    component: MensajePersonalizadoNew,
+    path: "/create/Mantenimiento",
+    name: "createMantenimiento",
+    component:MantenimientoNew,
   },
   {
-    path: "/editMensaje/Personalizado/:id",
-    name: "editMensajePersonalizado",
-    component: MensajePersonalizadoEdit,
-  },
-  {
-    path: "/viewMensaje/Personalizado",
-    name: "viewMensajePersonalizado",
-    component: MensajePersonalizadoView,
+    path: "/view/Mantenimiento",
+    name: "viewMantenimiento",
+    component: MantenimientoView
   },
 
-  //Route GUIA DE VOZ
+  //Route Bicicleta
   {
-    path: "/create/GuiaVoz",
-    name: "createGuiaVoz",
-    component: GuiaVozNew,
+    path: "/create/Bicicleta",
+    name: "createBicicleta",
+    component: BicicletaNew,
   },
   {
-    path: "/editGuia/Voz/:id",
-    name: "editGuiaVoz",
-    component: GuiaVozEdit,
-  },
-  {
-    path: "/view/GuiaVoz",
-    name: "viewGuiaVoz",
-    component: GuiaVozView,
+    path: "/view/Bicicleta",
+    name: "viewBicicleta",
+    component: BicicletaView,
   },
 
-  //Route PUNTO DE INTERES
+  //Route ESTACION 
   {
-    path: "/create/PuntoInteres",
-    name: "createPuntoInteres",
-    component: PuntoInteresNew,
-  },
-  {
-    path: "/edit/PuntoInteres/:id",
-    name: "editPuntoInteres",
-    component: PuntoInteresEdit,
-  },
-  {
-    path: "/view/PuntoInteres",
-    name: "viewPuntoInteres",
-    component: PuntoInteresView,
+    path: "/create/Estacion",
+    name: "createEstacion",
+    component: EstacionNew,
   },
 
-  //Route ESTACION DE METRO
   {
-    path: "/create/EstacionMetro",
-    name: "createEstacionMetro",
-    component: EstacionMetroNew,
-  },
-  {
-    path: "/edit/EstacionMetro/:id",
-    name: "editEstacionMetro",
-    component: EstacionMetroEdit,
-  },
-  {
-    path: "/view/EstacionMetro",
-    name: "viewEstacionMetro",
-    component: EstacionMetroView,
+    path: "/view/Estacion",
+    name: "viewEstacion",
+    component: EstacionView,
   },
 
   //Route Beacon
