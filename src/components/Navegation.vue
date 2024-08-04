@@ -63,20 +63,20 @@
            
             
           </li>
-         <!-- <li class="submenu">
+        <li class="submenu">
             <router-link to="/dashboard">
               <i class="fa fa-window-restore" aria-hidden="true"></i>
               <span v-if="!isCollapsed">Gestores</span>
             </router-link>
             <ul v-if="!isCollapsed">
-              <li><router-link to="/view/user">Usuarios</router-link></li>
-              <li><router-link to="/view/EstacionMetro">Estaciones</router-link></li>
-              <li><router-link to="/create/Bicicleta">Bicicletas</router-link></li>
-              <li><router-link to="/viewMensaje/Personalizado">Mantenimiento</router-link></li>
-              <li><router-link to="/view/Ruta">Alquileres</router-link></li>
+              <li><router-link to="/view/user">USUARIOS</router-link></li>
+              <li><router-link to="/view/Estacion">ESTACIONES</router-link></li>
+              <li><router-link to="/create/Bicicleta">BICICLETAS</router-link></li>
+              <li><router-link to="/view/Mantenimiento">Mantenimiento</router-link></li>
+              <li><router-link to="/view/Alquiler">Alquiler</router-link></li>
               <li><router-link to="/view/Beacon">BEACON</router-link></li>
             </ul>
-          </li>  -->
+          </li>  
         </ul>
       </nav>
     </aside>
